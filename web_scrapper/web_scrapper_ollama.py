@@ -6,8 +6,8 @@ from openai import OpenAI
 load_dotenv(override=True)
 api_key = os.getenv("OPENAI_API_KEY")
 
-openai = OpenAI()
-#gemini = OpenAI(base_url=GEMINI_BASE_URL, api_key=google_api_key)
+#openai = OpenAI()
+ollama = OpenAI(base_url="http://9.46.101.215:8085/v1", api_key="ollama")
 
 system_prompt = """
 You are a snarky assistant that analyzes the contents of a website,
@@ -31,8 +31,10 @@ def message_for(website):
 
 def summarize_url(url):
     website = fetch_website_contents(url)
-    response = openai.chat.completions.create(model="gpt-5-nano", messages=website)
-    #response = gemini.chat.completions.create(model="gemini-2.5-flash-lite", messages=[{"role": "user", "content": "Tell me a fun fact"}])
+    #response = openai.chat.completions.create(model="gpt-5-nano", messages=website)
+    response = ollama.chat.completions.create(model="llama3.2", messages=message_for(website))
+    #print(response.json())
+    #print("_______")
     return response.choices[0].message.content
 
 def main():
