@@ -33,7 +33,7 @@ git config user.email "work@email.com"
 
 run ollama on remote machine and access it outside.
 ```
-OLLAMA_HOST=0.0.0.0:8080 ollama serve
+OLLAMA_HOST=0.0.0.0:8085 ollama serve
 ```
 
 ```
@@ -46,3 +46,7 @@ Environment="OLLAMA_HOST=0.0.0.0:8080"
 sudo systemctl daemon-reload
 sudo systemctl restart ollama
 ```
+
+## expose it outside from Fyre:
+sudo firewall-cmd --permanent --add-port=9400/tcp
+sudo firewall-cmd --reload
