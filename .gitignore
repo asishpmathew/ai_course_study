@@ -8,3 +8,17 @@ wheels/
 
 # Virtual environments
 .venv
+
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# IntelliJ cache / workspace
+.idea_modules/
+
+# OS-specific (optional but recommended)
+.DS_Store
+Thumbs.db

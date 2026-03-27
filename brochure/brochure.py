@@ -94,10 +94,11 @@ def create_brochure(company_name, url):
     result = response.choices[0].message.content
     return result
 
-def stream_brochure(company_name, url):
+def stream_brochure(company_name, url, model):
+    yield f"Generating brochure for **{company_name}**...\n\n"
     user_prompt = get_brochure_user_prompt(company_name, url)
     stream = ollama.chat.completions.create(
-        model="llama3.2",
+        model=model,
         messages=[
             {"role": "system", "content": brochure_system_prompt},
             {"role": "user", "content": user_prompt}
@@ -111,6 +112,7 @@ def stream_brochure(company_name, url):
             content = chunk.choices[0].delta.content
             print(content, end="", flush=True)   # live output
             result += content
+            yield result
 
 def filter_valid_links(links):
     valid_links=[]
@@ -132,5 +134,5 @@ def filter_valid_links(links):
 
 if __name__ == "__main__":
     #print(create_brochure("Asish P Mathew", "https://asishpmathew.github.io/"))
-    stream_brochure("Asish P Mathew", "https://asishpmathew.github.io/")
+    stream_brochure("Asish P Mathew", "https://asishpmathew.github.io/", "llama3.2")
 
