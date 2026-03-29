@@ -2,13 +2,15 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 import gradio as gr
+import os
 
 from brochure.brochure import stream_brochure
 
 load_dotenv(override=True)
+baseUrl= os.getenv('BASE_URL')
 
 
-ollama = OpenAI(base_url="http://9.46.101.215:8085/v1", api_key="ollama")
+ollama = OpenAI(base_url=baseUrl, api_key="ollama")
 
 def stream_llama(prompt, model):
     messages = [

@@ -50,3 +50,7 @@ sudo systemctl restart ollama
 ## expose it outside from Fyre:
 sudo firewall-cmd --permanent --add-port=9400/tcp
 sudo firewall-cmd --reload
+
+
+## course documentation
+https://drive.google.com/drive/folders/1GMXbdgkqnZfCRcIdoUVBBB-hxeN4Lo06
