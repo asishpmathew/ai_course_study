@@ -6,7 +6,7 @@ import gradio as gr
 
 load_dotenv(override=True)
 baseUrl = os.getenv("BASE_URL")
-model = os.getenv("MODEL_LLAMA_3_2")
+model = os.getenv("MODEL_MIXTRAL")
 
 ollama = OpenAI(base_url=baseUrl, api_key="ollama")
 system_message = (
@@ -29,4 +29,5 @@ def chat(message, history):
 
 
 if __name__ == "__main__":
+    #gr.ChatInterface(fn=chat).launch(server_name="0.0.0.0",server_port=7860)
     gr.ChatInterface(fn=chat).launch()
