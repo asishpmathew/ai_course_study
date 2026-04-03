@@ -54,3 +54,7 @@ sudo firewall-cmd --reload
 
 ## course documentation
 https://drive.google.com/drive/folders/1GMXbdgkqnZfCRcIdoUVBBB-hxeN4Lo06
+
+google-colab
+ed donnner: https://colab.research.google.com/drive/1DjcrYDZldAXKJ08x1uYIVCtItoLPk1Wr?usp=sharing
+Asish : https://colab.research.google.com/drive/1pKbW_yQjS-oSddyutJnFWeh0Wslt_zr4
