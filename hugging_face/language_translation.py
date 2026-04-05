@@ -20,7 +20,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 model.to(device)
 
-text = "Hello, how are you?"
+text = "I am learning AI"
 
 inputs = tokenizer(
     text,
