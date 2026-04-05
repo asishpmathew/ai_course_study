@@ -2,6 +2,7 @@
 
 ```
 uv init
+uv sync
 uv python install 3.12
 uv python pin 3.12
 uv venv
@@ -58,3 +59,8 @@ https://drive.google.com/drive/folders/1GMXbdgkqnZfCRcIdoUVBBB-hxeN4Lo06
 google-colab
 ed donnner: https://colab.research.google.com/drive/1DjcrYDZldAXKJ08x1uYIVCtItoLPk1Wr?usp=sharing
 Asish : https://colab.research.google.com/drive/1pKbW_yQjS-oSddyutJnFWeh0Wslt_zr4
+
+##Hugging Face
+- models downloaded on following location : ~/.cache/huggingface/
+- delete one model: rm -rf ~/.cache/huggingface/hub/models--distilbert--*
+- delete all models: rm -rf ~/.cache/huggingface/hub/*
